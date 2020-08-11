@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.css"
+import { Column } from "./column"
+import { Card } from "./card"
+import { AppContainer } from "./styles"
+
+export default class App extends React.Component {
+  render(): JSX.Element {
+    return (
+      <AppContainer>
+        <Column text="To Do">
+          <Card text="Generate app scaffold"></Card>
+        </Column>
+        <Column text="In Progress">
+          <Card text="Learn Typescript"></Card>
+        </Column>
+        <Column text="Done">
+          <Card text="Being to use static typing"></Card>
+        </Column>
+      </AppContainer>
+    )
+  }
 }
-
-export default App;
